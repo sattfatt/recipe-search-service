@@ -1,0 +1,24 @@
+{
+  "name": "recipe-search-service",
+  "version": "1.0.0",
+  "description": "Express api that takes a list of ingredients and returns a list of recipes that relate.",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sattfatt/recipe-search-service.git"
+  },
+  "author": "Satyam Patel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sattfatt/recipe-search-service/issues"
+  },
+  "homepage": "https://github.com/sattfatt/recipe-search-service#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "node-fetch": "^3.2.0"
+  }
+}
