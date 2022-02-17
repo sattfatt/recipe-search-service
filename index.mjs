@@ -2,7 +2,7 @@ import express, { query, response } from "express";
 import cors from "cors";
 import fetch from "node-fetch";
 
-const port = process.env.port || 3001;
+const port = process.env.PORT || 3001;
 const app = express();
 
 const app_id = "4d410f16";
@@ -22,7 +22,7 @@ const getData = async (queries) => {
         query += q + ",";
     }
 
-    const data = await fetch(api_endpoint+query, { method: 'GET' });
+    const data = await fetch(api_endpoint + query, { method: 'GET' });
     const jsondata = await data.json();
     return jsondata;
 }
@@ -30,7 +30,26 @@ const getData = async (queries) => {
 
 app.get("/", (req, res) => {
     getData(req.query.ingredients.split(",")).then((data) => {
-        res.send(data);
+
+        console.log(data);
+
+        let filtered = {};
+
+        const count = data.to - data.from + 1;
+
+        filtered["count"] = count;
+        filtered["recipes"] = [];
+
+        for (let i = 0; i < count; i++) {
+            filtered.recipes.push({
+                "name" : data.hits[i].recipe.source,
+                "link" : data.hits[i].recipe.url,
+                "ingredients" : data.hits[i].recipe.ingredients,
+                "ingredientLines" : data.hits[i].recipe.ingredientLines
+            })
+        }
+
+        res.send(filtered);
     })
 });
 

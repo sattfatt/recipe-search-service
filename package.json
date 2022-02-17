@@ -1,17 +1,18 @@
 {
   "name": "recipe-search-service",
   "version": "1.0.0",
-  "description": "Express api that takes a list of ingredients and returns a list of recipes that relate.",
+  "description": "Express api that takes a list of ingredients and returns a list of recipes that relate. Powered by Edamam recipe api",
   "main": "index.mjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "node index.mjs"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sattfatt/recipe-search-service.git"
   },
   "author": "Satyam Patel",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/sattfatt/recipe-search-service/issues"
   },
@@ -20,5 +21,8 @@
     "cors": "^2.8.5",
     "express": "^4.17.2",
     "node-fetch": "^3.2.0"
+  },
+  "engines":{
+    "node" : "16.x"
   }
 }
