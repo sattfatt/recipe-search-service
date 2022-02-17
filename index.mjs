@@ -50,7 +50,9 @@ app.get("/", (req, res) => {
             })
         }
 
-        res.send(filtered);
+        res.status(200).send(filtered);
+    }).catch(error => {
+        res.status(404).send(error);
     })
 });
 
