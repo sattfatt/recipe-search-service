@@ -42,7 +42,8 @@ app.get("/", (req, res) => {
 
         for (let i = 0; i < count; i++) {
             filtered.recipes.push({
-                "name" : data.hits[i].recipe.source,
+                "name" : data.hits[i].recipe.label,
+                "source" : data.hits[i].recipe.source,
                 "link" : data.hits[i].recipe.url,
                 "ingredients" : data.hits[i].recipe.ingredients,
                 "ingredientLines" : data.hits[i].recipe.ingredientLines
